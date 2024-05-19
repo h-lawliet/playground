@@ -1,0 +1,75 @@
+@font-face {
+  font-family: 'neodgm';
+  src: url(neodgm.woff) format('woff');
+}
+body {
+  line-height: 30px;
+  margin: 0;
+  font-family: "neodgm";
+}
+a {
+  text-decoration: none;
+  color: aliceblue;
+}
+a:visited { 
+  color: aliceblue;
+  text-decoration: none; 
+}
+#grid {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: 1fr 3fr;
+}
+#textbox {
+  height: 100vh;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-image: url('images/background.gif');
+  background-repeat : no-repeat;
+  background-size : cover;
+  color: aliceblue;
+  position: relative;
+  font-size: small;
+}
+.form-box {
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.form-box div {
+  margin: 10px;
+}
+button {
+  margin: 10px;
+}
+.edit-btn {
+  font-size: 15px;
+  font-family: neodgm;
+  border-radius: 25px;
+  width: 80px;
+  height: 40px;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 1px 4px 0 rgb(0,0,0,0.5);
+}
+.submit-btn {
+  font-size: 15px;
+  font-family: neodgm;
+  border-radius: 25px;
+  width: 80px;
+  height: 40px;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 1px 4px 0 rgb(0,0,0,0.5);
+}
+#list_head {
+  font-size: 20px;
+  padding: 20px;
+  text-align: left;
+}
+#list_head a {
+  margin-right: 30px;
+}

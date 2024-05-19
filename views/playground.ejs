@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>마도연구부 2.0 - Playground</title>
+  <link rel="icon" href="/css/images/makisekurisu.png">
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+
+<body>
+  <div id="grid">
+    <%- include('nav.ejs') %>
+    <div id="textbox">
+      <div class="random_text">
+        <h2>랜덤 점심 선택기</h2>
+      </div>
+      <div class="random">
+        <canvas width="380" height='380'></canvas>  
+        <button onclick="rotate()">Start!</button>
+      </div>
+      <div class="map">
+        <h2>행정구역 지도 (추가 예정)</h2>
+      </div>
+
+      <div class="info">
+        (주X)마도연구부<br>
+        서울 동작구 노들로 2길 7<br>
+        ☎ 010-8681-0930<br>
+        copyrightⓒ 2023 All rights NOT reserved by 마도연구부<br>
+        released on 2023.5.21
+      </div>
+    </div>
+  
+  </div>
+</body>
+<script src="/js/timer.js"></script>
+</html>
+
+<style>
+@font-face {
+  font-family: 'neodgm';
+  src: url(neodgm.woff) format('woff');
+}
+
+canvas {
+  transition: 1s;
+}
+
+button {
+  background: #febf00;
+  margin-top: 1rem;
+  padding: .8rem 1.8rem;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: .2s;
+  cursor: pointer;
+  font-family: 'neodgm';
+}
+
+button:active {
+  background: #444;
+  color: #f9f9f9;
+}
+
+.random_text {
+  width: 380px;
+  text-align: center;
+}
+
+.map {
+  text-align: center;
+}
+ 
+.random {
+  width: 380px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  margin-top: 20px;
+}
+
+.random::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 50px;
+  border-radius: 5px;
+  background: #000;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 22;
+}
+
+.home:hover #home_content {
+  color: goldenrod;
+}
+
+</style>
+
+<script>
+const canvas = document.querySelector("canvas");
+// 그리기 객체를 취득해야 함.
+const ctx = canvas.getContext(`2d`);
+
+const product = [
+  "분식", "한식", "일식", "고기", "짱꺠", "편의점", "굶어", "이탈리안", "패스트푸드"];
+
+const colors = ["#dc0936", "#e6471d", "#f7a416", "#efe61f ", "#60b236", "#209b6c", "#169ed8", "#3f297e", "#87207b", "#be107f", "#e7167b"];
+
+const newMake = () => {
+    const [cw, ch] = [canvas.width / 2, canvas.height / 2];
+    const arc = Math.PI / (product.length / 2);
+  
+    for (let i = 0; i < product.length; i++) {
+      ctx.beginPath();
+      ctx.fillStyle = colors[i % (colors.length -1)];
+      ctx.moveTo(cw, ch);
+      ctx.arc(cw, ch, cw, arc * (i - 1), arc * i);
+      ctx.fill();
+      ctx.closePath();
+    }
+
+    ctx.fillStyle = "#fff";
+    ctx.font = "18px Pretendard";
+    ctx.textAlign = "center";
+
+    for (let i = 0; i < product.length; i++) {
+      const angle = (arc * i) + (arc / 2);
+
+      ctx.save()  ;
+
+      ctx.translate(
+        cw + Math.cos(angle) * (cw - 50),
+        ch + Math.sin(angle) * (ch - 50),
+      );
+
+      ctx.rotate(angle + Math.PI / 2);
+
+      product[i].split(" ").forEach((text, j) => {
+        ctx.fillText(text, 0, 30 * j);
+      });
+
+      ctx.restore();
+    }
+}
+
+const rotate = () => {
+  canvas.style.transform = `initial`;
+  canvas.style.transition = `initial`;
+  
+  setTimeout(() => {
+    
+    const ran = Math.floor(Math.random() * product.length);
+
+    const arc = 360 / product.length;
+    const rotate = (ran * arc) + 3600 + (arc * 3) - (arc/4);
+    
+    canvas.style.transform = `rotate(-${rotate}deg)`;
+    canvas.style.transition = `2s`;
+    
+    setTimeout(() => alert(`"${product[ran]}"`), 2000);
+  }, 1);
+};
+
+newMake();
+</script>

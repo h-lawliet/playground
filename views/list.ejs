@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>마도연구부 2.0 - 게시판</title>
+  <link rel="icon" href="/css/images/makisekurisu.png">
+  <link rel="stylesheet" href="/css/list.css">
+</head>
+
+<body>
+  <div id="grid">
+    <%- include('nav.ejs') %>
+    
+    <div id="textbox">
+      <div id="list_head">
+        <a href="/list/1" style="color: goldenrod;">자유게시판</a>
+        <a style="color: goldenrod;">서브컬쳐 게시판(제작중)</a>
+        <a href="/write" style="color: goldenrod;">글쓰기</a>
+      </div>
+      <table border="1" width="100%">
+        <th width="60px">no.</th>
+        <th>제목</th>
+        <th width="200px">등록자</th>
+        <% for (let i=0; i<list_page.length; i++) { %>
+          <tr>
+            <td><%= post.length - i %></td>
+            <td><a href="/text/<%= list_page[i]._id %>"><%= list_page[i].title %></a><a href="/edit/<%= list_page[i]._id %>"> ✎</a></td>
+            <td><%= post[i].user %></td>
+          </tr>
+        <% } %>
+      </table>
+
+      <div class="footer">
+        <% for (let i=0; i<=(post.length/10); i++) { %>  
+          <a href="/list/<%= i+1 %>"><%= i+1 %></a>
+        <% } %>
+      </div>
+    </div>
+  </div>
+  
+  <script src="/js/timer.js"></script>
+
+</body>
+</html>

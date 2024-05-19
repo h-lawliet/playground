@@ -1,0 +1,163 @@
+@font-face {
+    font-family: 'neodgm';
+    src: url(neodgm.woff) format('woff');
+    }
+
+    .mp3__container {
+      display: grid;
+      grid-template-rows: 40px 250px;
+      font-family: "neodgm";
+      width: 400px;
+    }
+
+    .mp3__title {
+      font-family: "neodgm";
+      font-size: 20px;
+      padding-left: 10px;
+      padding-top: 10px;
+    }
+
+    .player {
+      display: grid;
+      grid-template-rows: 100px repeat(3, 50px);
+      background-color: rgb(33, 67, 236);
+      color:rgb(255, 255, 255);
+      margin: 0;
+      place-items: center;
+    }
+
+    .details {
+      display: grid;
+      grid-template-rows: 60px 40px;
+      width: 400px
+    }
+
+    .track-name {
+      font-size: 28px;
+      padding-bottom: 10px;
+      padding-left: 15px;
+      padding-top: 12px;
+    }
+
+    .track-artist {
+      font-size: 20px;
+      color: white;
+      padding-left: 15px;
+      padding-top: 10px;
+    }
+
+    .buttons {
+      display: grid;
+      width: 300px;
+      height: 80px;
+      grid-template-columns: repeat(3, 1fr);
+      place-items: center;
+    }
+
+    .playpause-track,
+    .prev-track,
+    .next-track {
+      padding-left: 25px;
+      padding-right: 25px;
+      padding-top: 0;
+      padding-bottom: 0;
+      opacity: 0.8;
+    
+      /* Smoothly transition the opacity */
+      transition: opacity .2s;
+    }
+    
+    /* Change the opacity when mouse is hovered */
+    .playpause-track:hover,
+    .prev-track:hover,
+    .next-track:hover {
+      opacity: 1.0;
+    }
+    
+    /* Define the slider width so that it scales properly */
+    .slider_container {
+      width: 400px;
+      max-width: 400px;
+      display: grid;
+      grid-template-columns: 50px 300px 50px;
+      place-items: center;
+    }
+
+    .slider_container_2 {
+      width: 400px;
+      max-width: 400px;
+      display: grid;
+      grid-template-columns: 1fr 220px 1fr;
+      place-items: center;
+    }
+
+    .image_1 {
+      margin-left: auto;
+      margin-right: 0;
+    }
+
+    .image_2 {
+      margin-left: 0;
+      margin-right: auto;
+    }
+    
+    /* Modify the appearance of the slider */
+    .seek_slider, .volume_slider {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      height: 5px;
+      background: rgb(255, 255, 255);
+      opacity: 0.8;
+      -webkit-transition: .2s;
+      transition: opacity .2s;
+    }
+    
+    /* Modify the appearance of the slider thumb */
+    .seek_slider::-webkit-slider-thumb,
+    .volume_slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      width: 15px;
+      height: 15px;
+      background: white;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+    
+    /* Change the opacity when mouse is hovered */
+    .seek_slider:hover,
+    .volume_slider:hover {
+      opacity: 1.0;
+    }
+    
+    .seek_slider {
+      width: 250px;
+    }
+    
+    .volume_slider {
+      width: 170px;
+    }
+    
+    .current-time {
+      margin-left: 20px;
+    }
+
+    .total-duration {
+      margin-right: 20px;
+    }
+    
+    i.fa-volume-down,
+    i.fa-volume-up {
+      padding: 10px;
+    }
+    
+    /* Change the mouse cursor to a pointer
+      when hovered over */
+    i.fa-play,
+    i.fa-pause,
+    i.fa-forward-step,
+    i.fa-backward-step {
+      cursor: pointer;
+    }

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>@ 채널</title>
+  <link rel="icon" href="/css/images/makisekurisu.png">
+  <link rel="stylesheet" href="/css/chat.css">
+</head>
+
+<body>
+  <div id="grid">
+    <%- include('nav.ejs') %>
+    
+    <div id="textbox">
+      <div class="chat_intro">
+        안녕하세요. 여기는 채팅서버 베타테스트 @채널입니다. 이곳에서 인터넷 망령들과 생산성없는 대화를 나눠보세요.<br>
+        <img src="/css/images/pikachu.gif" width="40px">
+        <img src="/css/images/pikachu.gif" width="40px">
+        <img src="/css/images/pikachu.gif" width="40px">
+      </div>
+      
+      <div id="chatbox">
+        <% for (i=0; i<chatdata.length; i++) { %>
+          <div class="chatscreen">
+            <%= chatdata[i].user %> : <%= chatdata[i].content %> | <%= chatdata[i].time %>
+          </div>
+        <% } %>
+      </div>
+
+      <div class="chat-input">
+        <input id="chat-text">
+        <input style="display: none;" id="nickname" value="<%= user.nickname %>">
+        <button class="chat-button">전송</button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="/js/timer.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/socket.io@4.7.2/client-dist/socket.io.min.js"></script>
+  <script>
+
+    function CurrentTime() {
+
+      var current = new Date()
+      var hour = current.getHours()
+      var minute = current.getMinutes()
+      var year = current.getFullYear()
+      var month = current.getMonth()+1
+      var day = current.getDate()
+
+      return year + '/' + zeros(month) + '/' + zeros(day) + ' ' + zeros(hour) + ':' + zeros(minute)
+    }
+    function zeros(num) {
+      if (num < 10) {
+        return '0'+num
+      }
+      else {
+        return num
+      }
+    }
+
+    const socket = io()
+    socket.emit('ask-join', 'chat')
+
+    document.querySelector('.chat-button').addEventListener('click', () => {
+      let message_text = document.getElementById('chat-text')
+      let message_user = document.getElementById('nickname')
+      let chat_time = CurrentTime()
+      socket.emit('message', {
+        msg : message_text.value,
+        user : message_user.value,
+        time : chat_time
+      })
+      message_text.value = null
+    })
+
+    socket.on('broadcast', (msg) => {
+      document.querySelector('.chatscreen')
+      .insertAdjacentHTML('beforeend', `<div class="chat-box">${msg.user} : ${msg.content} | ${msg.time}</div>`)
+    })
+  </script>
+
+</body>
+</html>

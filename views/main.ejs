@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>마도연구부 2.0</title>
+  <link rel="icon" href="/css/images/makisekurisu.png">
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/mp3.css">
+</head>
+
+<body>
+  <div id="grid">
+    <%- include('nav.ejs') %>
+    <div id="textbox">
+      <div id="head">
+        <h1>마도연구부 2.0 ＼(´◓Д◔`)/</h1>
+      </div>
+      <br>
+      <div class="mp3__container">
+        <div class="mp3__title">
+          Instrumental Collection vol.1 ♬♬
+        </div>
+        <div class="player"> 
+          <div class="details">
+            <div class="track-name">Track Name</div>
+            <div class="track-artist">Track Artist</div>
+          </div>
+          <div class="slider_container">
+            <span class="current-time">00:00</span>
+            <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+            <span class="total-duration">00:00</span>
+          </div>
+          <div class="buttons">
+            <div class="prev-track" onclick="prevTrack()">
+              <img src="/css/images/media-skip-backward-48.png">
+            </div>
+            <div class="playpause-track" onclick="playpauseTrack()">
+              <img src="/css/images/media-play-48.png">
+            </div>
+            <div class="next-track" onclick="nextTrack()">
+              <img src="/css/images/media-skip-forward-48.png">
+            </div>
+          </div>
+          <div class="slider_container_2">
+            <div class="image_1">  
+              <img src="/css/images/volume-down-5-24.png">
+            </div>
+            <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
+            <div class="image_2">
+              <img src="/css/images/volume-up-4-24.png">
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <p>
+        <h2>※ 모바일로 보면 화면 깨질 수 있읍니다...(절대로 귀찮아서 안고치는거 아님...;;;)</h2>
+        <h4>NOTICE!! 현재 90% 완성하였으나 UI 만들기 겁나 귀찮은 관계로 당분간 이대로 운영합니다.....하하하</h4>
+        <h4>UPDATE!! 홈페이지 메인 주크박스 기능 추가 (2023.5.31)</h4>
+        <h4>UPDATE!! Node.js 로그인 회원가입 기능 구현 (2023.6.17)</h4>
+        <h4>UPDATE!! 채팅 서버 및 커뮤니티 베타테스트 (2024.2.7)</h4>
+      </p>
+      <br><hr>
+      
+      <div class="news">
+        <h2>@@ NEWS @@</h2>
+          <ul>
+            <li>H_Lawliet 백수 탈출.. 드디어 방구석에서 기어나와...<12.19></li>
+            <li>김현성 곧 입대...ICBM 만들려고 간다는 소문이 있다</li>
+            <li>휘선 27 재개장 확정...주인장 억장 와르르멘션..............</li>
+            <li>유툽 채널 링크(음악 플레이리스트 업로드용) : 
+              <a href="https://www.youtube.com/channel/UC8vvb3V69_709k5fsSu9pow" target="_blank" style="color: goldenrod;">바로가기</a>
+            </li>
+            <li>마도연구부 이전 : 상도 --> 노량진 (2월 17일 이사)</li>
+            <li>
+              <img src="/css/images/222.gif" width="40px">
+              <img src="/css/images/222.gif" width="40px">
+              <img src="/css/images/222.gif" width="40px">
+              <img src="/css/images/222.gif" width="40px">
+              <img src="/css/images/222.gif" width="40px">
+              <img src="/css/images/222.gif" width="40px">
+            </li>
+          </ul><br>
+          <hr>
+          // 추가로 만들어야되는거 정리 //<br>
+          - mp3 제목 flex 오버랩 <br>
+          - 모바일 css <br>
+          - 로그아웃 <br>
+          - app.js 모듈화 <br>
+          - 채팅 인풋을 엔터키로... <br>
+          - 채팅방 css <br>
+          - 채팅방/커뮤니티 사진/url 업로드 <br>
+          - aws 무료 플랜 <br>
+          - 채팅방 푸쉬 알림 <br>
+          - 음악 목록 db로 관리 <br>
+          - 아카이브 유저 편집기능 (이건 나중에)
+      </div>
+
+      <div class="info">
+        (주X)마도연구부<br>
+        서울 동작구 노들로 2길 7<br>
+        ☎ 010-8681-0930<br>
+        copyrightⓒ2023 All rights NOT reserved by 마도연구부<br>
+        released on 2023.5.21
+      </div>
+    </div>
+  </div>
+  
+  <script src="/js/timer.js"></script>
+  <script src="/js/mp3.js"></script>
+
+</body>
+</html>

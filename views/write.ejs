@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글쓰기</title>
+  <link rel="icon" href="/css/images/makisekurisu.png">
+  <link rel="stylesheet" href="/css/write.css">
+</head>
+
+<body>
+  <div id="grid">
+    <%- include('nav.ejs') %>
+    <div id="textbox">
+      <div id="list_head">
+        <a href="/list/1" style="color: goldenrod;">자유게시판</a>
+        <a style="color: goldenrod;">서브컬쳐 게시판(제작중)</a>
+        <a href="/write" style="color: goldenrod;">글쓰기</a>
+      </div>
+      <form class="form-box" action="/write" method="POST">
+        <div>
+          제목 : <input name="title" type="text" autocomplete="off">
+        </div>
+        <div>
+          내용 : <textarea name="content" rows="20" cols="100"></textarea>
+        </div>
+        <button class="submit-btn" type="submit">전송</button>
+      </form>
+    </div>
+  </div>
+  
+  <script src="/js/timer.js"></script>
+
+</body>
+</html>
