@@ -37,10 +37,10 @@ const { MongoClient, ObjectId } = require('mongodb')
 let db
 const url = process.env.DB_URL
 new MongoClient(url).connect().then((client) => {
-  console.log('DB 연결됨');
+  console.log('DB connected');
   db = client.db('web')
   server.listen(process.env.PORT, () => {
-    console.log('port 8080 open')
+    console.log(`port ${process.env.PORT} open`)
   })
 }).catch((err) => {
   console.log(err)
@@ -49,9 +49,9 @@ new MongoClient(url).connect().then((client) => {
 app.get('/', (req, res) => {
   res.render('main.ejs')
   if (req.user) {
-    console.log('HOME 접속 :', req.user)
+    console.log('HOME connection : ', req.user)
   } else {
-    console.log('로그인하지 않은 사용자 접속 : HOME')
+    console.log('status(NOT LOGED IN) : HOME')
   }
 })
 
