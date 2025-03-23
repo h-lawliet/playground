@@ -25,128 +25,128 @@ let track_list = [
 {
   name: "Reminiscence",
   artist: "Nauts(남구민)",
-  path: "/css/audio/Reminiscence.mp3"
+  path: "/audio/Reminiscence.mp3"
 },
 {
   name: "Second Run",
   artist: "Nauts(남구민)",
-  path: "/css/audio/Second Run.mp3"
+  path: "/audio/Second Run.mp3"
 },
 {
   name: "月流 - Getsuryu",
   artist: "Hallo",
-  path: "/css/audio/月流Getsuryu.mp3"
+  path: "/audio/月流Getsuryu.mp3"
 },
 {
   name: "You're Gonna Be Ok",
   artist: "Iwamizu",
-  path: "/css/audio/You're Gonna Be Ok.mp3"
+  path: "/audio/You're Gonna Be Ok.mp3"
 },
 {
   name: "Aruarian Dance",
   artist: "Nujabes",
-  path: "/css/audio/Aruarian Dance.mp3"
+  path: "/audio/Aruarian Dance.mp3"
 },
 {
   name: "Tsurugi No Mai",
   artist: "Nujabes",
-  path: "/css/audio/Tsurugi No Mai.mp3"
+  path: "/audio/Tsurugi No Mai.mp3"
 },
 
 {
   name: "soul nights",
   artist: "music shower",
-  path: "/css/audio/soul nights.mp3"
+  path: "/audio/soul nights.mp3"
 },
 {
   name: "2:23 AM",
   artist: "しゃろう",
-  path: "/css/audio/223AM.mp3"
+  path: "/audio/223AM.mp3"
 },
 {
   name: "HOME",
   artist: "有形ランペイジ",
-  path: "/css/audio/HOME.mp3"
+  path: "/audio/HOME.mp3"
 },
 {
   name: "Flower Dance",
   artist: "DJ Okawari",
-  path: "/css/audio/Flower Dance.mp3"
+  path: "/audio/Flower Dance.mp3"
 },
 {
   name: "LOVE L.A",
   artist: "Ruben Wilmer Band",
-  path: "/css/audio/Love L.A.mp3"
+  path: "/audio/Love L.A.mp3"
 },
 {
   name: "Ji-Eun's Sunset",
   artist: "City Girl",
-  path: "/css/audio/Ji-Eun's Sunset.mp3"
+  path: "/audio/Ji-Eun's Sunset.mp3"
 },
 {
   name: "Days Like These",
   artist: "LAKEY INSPIRED",
-  path: "/css/audio/Days Like These.mp3"
+  path: "/audio/Days Like These.mp3"
 },
 {
   name: "take me there",
   artist: "potsu",
-  path: "/css/audio/take me there.mp3"
+  path: "/audio/take me there.mp3"
 },
 {
   name: "letting go",
   artist: "potsu",
-  path: "/css/audio/letting go.mp3"
+  path: "/audio/letting go.mp3"
 },
 {
   name: "just friends",
   artist: "potsu",
-  path: "/css/audio/just friends.mp3"
+  path: "/audio/just friends.mp3"
 },
 {
   name: "food court",
   artist: "potsu",
-  path: "/css/audio/food court.mp3"
+  path: "/audio/food court.mp3"
 },
 {
   name: "A Neon Glow Lights the Way",
   artist: "Garoad",
-  path: "/css/audio/A Neon Glow Lights the Way.mp3"
+  path: "/audio/A Neon Glow Lights the Way.mp3"
 },
 {
   name: "Welcome to VA-11 Hall-A",
   artist: "Garoad",
-  path: "/css/audio/Welcome to VA11 HallA.mp3"
+  path: "/audio/Welcome to VA11 HallA.mp3"
 },
 {
   name: "Neon District",
   artist: "Garoad",
-  path: "/css/audio/Neon District.mp3"
+  path: "/audio/Neon District.mp3"
 },
 {
   name: "Karmotrine Dream",
   artist: "Garoad",
-  path: "/css/audio/Karmotrine Dream.mp3"
+  path: "/audio/Karmotrine Dream.mp3"
 },
 {
   name: "Dreamscaping",
   artist: "Fearofdark",
-  path: "/css/audio/Dreamscaping.mp3"
+  path: "/audio/Dreamscaping.mp3"
 },
 {
   name: "Rolling Down The Street In My Katamari",
   artist: "Fearofdark",
-  path: "/css/audio/Rolling Down The Street In My Katamari.mp3"
+  path: "/audio/Rolling Down The Street In My Katamari.mp3"
 },
 {
   name: "Moon",
   artist: "FreeTEMPO",
-  path: "/css/audio/Moon.mp3"
+  path: "/audio/Moon.mp3"
 },
 {
   name: "Resonance",
   artist: "HOME",
-  path: "/css/audio/Resonance.mp3"
+  path: "/audio/Resonance.mp3"
 },
 ];
 
@@ -189,14 +189,14 @@ function playTrack() {
   curr_track.play();
   isPlaying = true;
 
-  playpause_btn.innerHTML = '<img src="/css/images/media-pause-48.png">';
+  playpause_btn.innerHTML = '<img src="/images/media-pause-48.png">';
 }
 
 function pauseTrack() {
   curr_track.pause();
   isPlaying = false;
 
-  playpause_btn.innerHTML = '<img src="/css/images/media-play-48.png">';
+  playpause_btn.innerHTML = '<img src="/images/media-play-48.png">';
 }
 
 function nextTrack() {
