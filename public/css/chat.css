@@ -24,7 +24,7 @@
   }
   #menubar {
     border-right: 3px solid rgb(225, 211, 11);
-    background-image: url('images/background_menubar.avif');
+    background-image: url('/images/background_menubar.avif');
     background-position: center;
     background-size: cover;
     color: aliceblue;
@@ -38,7 +38,7 @@
   #textbox {
     height: 100vh;
     padding-left: 20px;
-    background-image: url('images/background.gif');
+    background-image: url('/images/background.gif');
     background-repeat : no-repeat;
     background-size : cover;
     color: aliceblue;
@@ -79,7 +79,7 @@
   #textbox {
     height: 100%;
     padding-left: 20px;
-    background-image: url('images/background.gif');
+    background-image: url('/images/background.gif');
     background-repeat : no-repeat;
     background-size : cover;
     color: aliceblue;
