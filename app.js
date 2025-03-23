@@ -39,7 +39,7 @@ const url = process.env.DB_URL
 new MongoClient(url).connect().then((client) => {
   console.log('DB connected');
   db = client.db('web')
-  server.listen(process.env.PORT, () => {
+  server.listen(process.env.PORT, "0.0.0.0", () => {
     console.log(`port ${process.env.PORT} open`)
   })
 }).catch((err) => {
